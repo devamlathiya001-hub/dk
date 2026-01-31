@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery One 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f6, #e8f5e9);
+      color: #444;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px;
+      color: #FF6FA5;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      padding: 10px;
+    }
+
+    .photo-box {
+      width: 45%;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .photo-box img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .desc {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      color: #7B6CFF;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .photo-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<audio id="bgMusic" loop></audio>
+<button onclick="toggleMusic()" class="music-btn">🎵 Play Music</button>
+
+  <h1>More Moments 🤍</h1>
+
+  <div class="gallery">
+    <div class="photo-box">
+      <img src="images 2/IMG_7048.JPG">
+      <p class="desc"><b>A moment that felt calm 🤍</b></p>
+    </div>
+
+    <div class="photo-box">
+      <img src="images 1/IMG_5013.JPG">
+      <p class="desc"><b>Soft smiles and real vibes 😊</b></p>
+    </div>
+
+    <div class="photo-box">
+      <img src="images 2/IMG_5496.JPG">
+      <p class="desc"><b>Quietly special ✨</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 2/IMG_7658.JPG">
+      <p class="desc"><b>A smile that quietly makes everything better 🌷</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 2/IMG_6950.JPG">
+      <p class="desc"><b>Just you, being naturally lovely 🌸�</b>�</p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 1/IMG_4723.JPG">
+      <p class="desc"><b>A little moment, a lot of warmth 💕✨</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 2/IMG_7042.JPG">
+      <p class="desc"><b>This smile might be my weakness 😌🌸</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 1/IMG_4808.JPG">
+      <p class="desc"><b>Comfort looks like this 🌷😌</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 1/IMG_3962.JPG">
+      <p class="desc"><b>This photo just made me smile 😄🤍</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 1/IMG_4741.JPG">
+      <p class="desc"><b>Calm energy, beautiful presence 🌿🤍</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 2/IMG_7116.JPG">
+      <p class="desc"><b>You make simple moments special 🌸�</b>�</p>
+    </div>
+    <div class="photo-box">
+      <img src="images 3/IMG_9352.JPG">
+      <p class="desc"><b>Little moments, big warmth 🌼💗</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 1/IMG_1257.JPG">
+      <p class="desc"><b>Soft light, real smile, peaceful vibe 🌤️🤍</b></p>
+    </div>
+    <div class="photo-box">
+      <img src="images 2/IMG_5238.JPG">
+      <p class="desc"><b>You make the camera look lucky 😉✨</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 1/IMG_1875.JPG">
+      <p class="desc"><b>Natural, effortless, and lovely 🌿🌸</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 2/IMG_6995.JPG">
+      <p class="desc"><b>A calm frame full of good energy 🌼😌</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 2/IMG_7041.JPG">
+      <p class="desc"><b>Hard to look away from this one 😌🌸</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 1/IMG_3703.JPG">
+      <p class="desc"><b>A softness here that’s hard to explain 🤍�</b>�</p>
+    </div>
+    <div class="photo-box">
+      <img src="images 1/IMG_5010.JPG">
+      <p class="desc"><b>Light, stillness, and a gentle mood 🌤️🤍</b></p>
+    </div>
+    
+    <div class="photo-box">
+      <img src="images 2/IMG_6944.JPG">
+      <p class="desc"><b>Tradition suits you in the most beautiful way 🌸✨</b></p>
+    </div>
+  </div>
+
+  <a href="devam.html" class="back">← Back</a>
+ <script>
+  var music = document.getElementById("bgMusic");
+  var musicBtn = document.querySelector(".music-btn");
+
+  // 🎶 PLAYLIST
+  var playlist = [
+  	"Uden Jab Jab Zulfen Teri (Form Naya Daur).mp3",
+    "Jigardan_Gadhavi_Kavya_Limaye_-_RAMO_RE_-_Navratri_2025_(mp3.pm).mp3",
+    "Ehsaas Faheem Abdullah 320 Kbps.mp3",
+    "Tere Liye(KoshalWorld.Com).mp3"
+  ];
+
+  var currentTrack = localStorage.getItem("currentTrack")
+    ? parseInt(localStorage.getItem("currentTrack"))
+    : 0;
+
+  // Load current track
+  music.src = playlist[currentTrack];
+
+  // Restore time
+  music.addEventListener("loadedmetadata", function () {
+    var savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+      music.currentTime = savedTime;
+    }
+
+    if (localStorage.getItem("musicPlaying") === "true") {
+      music.play();
+      if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
+    }
+  });
+
+  // When song ends → play next
+  music.addEventListener("ended", function () {
+    currentTrack++;
+    if (currentTrack >= playlist.length) {
+      currentTrack = 0; // loop back
+    }
+
+    localStorage.setItem("currentTrack", currentTrack);
+    music.src = playlist[currentTrack];
+    music.play();
+  });
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      localStorage.setItem("musicPlaying", "true");
+      if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
+    } else {
+      music.pause();
+      localStorage.setItem("musicPlaying", "false");
+      if (musicBtn) musicBtn.innerText = "🎵 Play Music";
+    }
+  }
+
+  // Save time before page change
+  window.addEventListener("beforeunload", function () {
+    localStorage.setItem("musicTime", music.currentTime);
+  });
+</script>
+
+
+</body>
+</html>
