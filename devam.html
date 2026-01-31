@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just For You 🌸</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+	  background-image:url(images%201/3.jpg);
+	   linear-gradient(to bottom right, #ffe6f0, #f3f7ff)
+      color: #444;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+	
+	.name{
+		color: #ff6fa5;	
+	}
+	
+
+    h1 {
+      color: #ff6fa5;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #ff6fa5;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .points {
+      text-align: left;
+    }
+
+    .points li {
+      margin: 10px 0;
+    }
+
+    .gallery img {
+      width: 30%;
+      margin: 8px;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      color: #FB0000;
+    }
+	
+	@media (max-width: 600px) {
+  .gallery img {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+	
+	.music-btn {
+  		background: #FF6FA5;
+  		color: white;
+  		border: none;
+  		padding: 10px 18px;
+ 	 	border-radius: 20px;
+  		cursor: pointer;
+  		font-size: 14px;
+  		margin-bottom: 20px;
+}
+
+.photo {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.caption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+@media (max-width: 600px) {
+  .gallery img {
+    width: 90%;
+  }
+}
+
+
+.video-card {
+  padding: 16px;
+}
+
+.my-video {
+  width: 100%;
+  max-height: 70vh;        
+  border-radius: 14px;
+  object-fit: contain;    
+  background: #000;       
+}
+
+.video-caption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Extra mobile polish */
+@media (max-width: 600px) {
+  .my-video {
+    max-height: 60vh;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+  	<button onclick="toggleMusic()" class="music-btn">▶️ Play / Pause</button>
+<button onclick="nextSong()" class="music-btn">⏭️ Next Song</button>
+
+<audio id="bgMusic"></audio>
+    <!-- Welcome -->
+    <h1>Hey, <span class="name">KHUSHI</span> 😊</h1>
+    <div class="card">
+      <p>
+        This small website is just a gentle way to say  
+        <strong>you matter more to me</strong> 🌸  
+      </p>
+    </div>
+
+    <!-- Why Special -->
+    <h2>Why You’re Special To Meeeeee 💐</h2>
+    <div class="card">
+      <ul class="points">
+        <li>You make conversations feel easy and comfortable ✨</li>
+        <li>Your smile changes the mood 😊</li>
+        <li>You presence brings calm and positivity 🌷</li>
+        <li>Talking to you feels comfortable 💬</li>
+      </ul>
+    </div>
+    
+    <h2>A Few Words For You 🤍</h2>
+    <div class="card">
+    <p style="line-height:1.7;font-size:16px;">
+    You have this natural way of standing out without ever trying ✨—there’s warmth in your smile 🌸 and an ease in your presence that makes everything feel lighter 🤍. Conversations with you don’t feel forced; they flow effortlessly, filled with comfort and little smiles 😊. There’s something quietly captivating about you—grace in your simplicity, charm in your honesty 🌷. Over time, in the most unexpected way, you became<strong> someone's important</strong> 😌. And having you as my friend now feels like a small piece of happiness I didn’t know I needed 💖.
+    </div>
+
+    <!-- Memories -->
+    <h2>Little Moments 📸</h2>
+   <div class="card gallery">
+
+  <div class="photo">
+  <a href="khushi.html">
+    <img src="images 2/IMG_7120.JPG"></a>
+    <p class="caption">Khushi's Gallery🤍</p>
+  </div>
+
+  <div class="photo">
+  <a href="gallery.html">
+    <img src="images 3/IMG_20241031_171753.jpg"></a>
+    <p class="caption">Devam's Gallery🌸</p>
+  </div>
+
+  <div class="photo">
+  <a href="dev.html">
+    <img src="images 1/2.jpg"></a>
+    <p class="caption">Mine Favorite Filter 😂</p>
+  </div>
+
+</div>
+
+<h2>A Little Moment 🎥</h2>
+<div class="card video-card">
+  <video class="my-video" controls muted playsinline>
+    <source src="images 2/IMG_6936.MOV" type="video/mp4">
+    Your browser does not support the video.
+  </video>
+
+  <p class="video-caption">
+   Some moments feel even better in motion 🤍
+  </p>
+</div>
+
+    <h2>Just Saying… 😉</h2>
+<div class="card">
+  <p style="font-size:16px;">
+    I don’t know if it’s your vibe or your smile, but talking to you is slowly becoming my favorite part of the day 😉
+  </p>
+</div>
+
+<h2>Grateful 🤍</h2>
+<div class="card">
+  <p style="font-size:16px; line-height:1.7;">
+    Thank you for becoming such a beautiful part of my days.  
+    Your presence, your words, and your vibe truly mean more than I can explain 🤍
+  </p>
+</div>
+
+    <footer>
+      Made with a smile 😊
+    </footer>
+
+  </div>
+<script>
+  // Audio element
+  var music = document.getElementById("bgMusic");
+
+  // Playlist
+  var songs = [
+  	"Uden Jab Jab Zulfen Teri (Form Naya Daur).mp3",
+    "Ehsaas Faheem Abdullah 320 Kbps.mp3",
+    "Jigardan_Gadhavi_Kavya_Limaye_-_RAMO_RE_-_Navratri_2025_(mp3.pm).mp3",
+    "Tere Liye(KoshalWorld.Com).mp3"
+  ];
+
+  // Global index (VERY IMPORTANT)
+  var index = 0;
+
+  // Load first song
+  music.src = songs[index];
+
+  // Play / Pause button
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  // NEXT SONG button (FIXED)
+  function nextSong() {
+    index = index + 1;
+
+    if (index >= songs.length) {
+      index = 0;
+    }
+
+    music.src = songs[index];
+    music.currentTime = 0;
+    music.play();
+  }
+
+  // Auto next when song ends
+  music.addEventListener("ended", function () {
+    nextSong();
+  });
+</script>
+</body>
+</html>
