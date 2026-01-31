@@ -267,84 +267,71 @@
 
   </div>
 <script>
+  // Audio element
   var music = document.getElementById("bgMusic");
-  var musicBtn = document.querySelector(".music-btn");
 
-  // 🎶 PLAYLIST
-  var playlist = [
-	"Uden Jab Jab Zulfen Teri (Form Naya Daur).mp3",
+  // 🎶 PLAYLIST (ADD YOUR SONG FILES HERE)
+  var songs = [
+    "Uden Jab Jab Zulfen Teri (Form Naya Daur).mp3",
     "Jigardan_Gadhavi_Kavya_Limaye_-_RAMO_RE_-_Navratri_2025_(mp3.pm).mp3",
     "Ehsaas Faheem Abdullah 320 Kbps.mp3",
-    "Tere Liye(KoshalWorld.Com).mp3"
+    "Tere Liye(KoshalWorld.Com).mp3
   ];
 
-  var currentTrack = localStorage.getItem("currentTrack")
-    ? parseInt(localStorage.getItem("currentTrack"))
+  // Current song index
+  var index = localStorage.getItem("songIndex")
+    ? parseInt(localStorage.getItem("songIndex"))
     : 0;
 
-  // Load current track
-  music.src = playlist[currentTrack];
+  // Load song
+  music.src = songs[index];
 
-  // Restore time
-  music.addEventListener("loadedmetadata", function () {
-    var savedTime = localStorage.getItem("musicTime");
-    if (savedTime) {
-      music.currentTime = savedTime;
-    }
-
-    if (localStorage.getItem("musicPlaying") === "true") {
-      music.play();
-      if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
-    }
-  });
-
-  // When song ends → play next
-  music.addEventListener("ended", function () {
-    currentTrack++;
-    if (currentTrack >= playlist.length) {
-      currentTrack = 0; // loop back
-    }
-
-    localStorage.setItem("currentTrack", currentTrack);
-    music.src = playlist[currentTrack];
+  // Restore play state
+  if (localStorage.getItem("musicPlaying") === "true") {
     music.play();
-  });
+  }
 
+  // ▶️ Play / Pause
   function toggleMusic() {
     if (music.paused) {
       music.play();
       localStorage.setItem("musicPlaying", "true");
-      if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
     } else {
       music.pause();
       localStorage.setItem("musicPlaying", "false");
-      if (musicBtn) musicBtn.innerText = "🎵 Play Music";
     }
   }
 
-  // Save time before page change
-  window.addEventListener("beforeunload", function () {
-    localStorage.setItem("musicTime", music.currentTime);
-  });
+  // ⏭️ NEXT SONG BUTTON
   function nextSong() {
     index++;
+
     if (index >= songs.length) {
       index = 0;
     }
 
     localStorage.setItem("songIndex", index);
-    localStorage.removeItem("musicTime"); // reset time
-
     music.src = songs[index];
     music.currentTime = 0;
     music.play();
 
     localStorage.setItem("musicPlaying", "true");
-    if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
   }
-	</script>
+
+  // 🔁 Auto-play next when song ends
+  music.addEventListener("ended", function () {
+    nextSong();
+  });
+
+  // 💾 Save state before page change
+  window.addEventListener("beforeunload", function () {
+    localStorage.setItem("songIndex", index);
+    localStorage.setItem("musicPlaying", !music.paused);
+  });
+</script>
 </body>
 </html>
+
 
 
 
