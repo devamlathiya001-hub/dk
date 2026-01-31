@@ -68,7 +68,7 @@
 <body>
 <audio id="bgMusic" loop></audio>
 <button onclick="toggleMusic()" class="music-btn">🎵 Play Music</button>
-
+<button onclick="nextSong()">⏭️</button>
 
   <h1>More Moments 🤍</h1>
 
@@ -186,7 +186,26 @@
     localStorage.setItem("musicTime", music.currentTime);
   });
 </script>
+    <script>
+  function nextSong() {
+    index++;
+    if (index >= songs.length) {
+      index = 0;
+    }
+
+    localStorage.setItem("songIndex", index);
+    localStorage.removeItem("musicTime"); // reset time
+
+    music.src = songs[index];
+    music.currentTime = 0;
+    music.play();
+
+    localStorage.setItem("musicPlaying", "true");
+    if (musicBtn) musicBtn.innerText = "⏸ Pause Music";
+  }
+</script>
 
 </body>
 </html>
+
 
